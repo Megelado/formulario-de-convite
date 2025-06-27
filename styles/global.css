@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /*titulos*/
+
+  --logo: 400 40px/auto "Leckerli One", cursive;
+  --h2: 800 28px/auto "Baloo 2", sans-serif;
+  --h3: 800 18px/auto "Baloo 2", sans-serif;
+
+  /*Span*/
+
+  --span-md: 600 16px/auto "Open Sans", sans-serif;
+  --span-sm: 600 14px/auto "Open Sans", sans-serif;
+  --span-xs: 600 12px/auto "Open Sans", sans-serif;
+
+  /*Texto*/
+
+  --text-md: 400 16px/auto "Open Sans", sans-serif;
+  --text-sm: 400 14px/auto "Open Sans", sans-serif;
+  --text-xs: 400 12px/auto "Open Sans", sans-serif;
+
+  /*cores dos textos*/
+
+  --text-heading: #F9F9F9;
+  --text-body: #C8CDD0;
+
+  /*Feedback*/
+
+  --danger: #FF5959;
+
+  /*Cores do brand*/
+
+  --brand-light: #59B2FF;
+  --brand-mid: #3487CF;
+  --brand-dark: #1D6FB6;
+}
+
+body {
+  font: var(--text-md);
+  color: var(--text-body);
+}
