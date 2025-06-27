@@ -37,9 +37,29 @@
   --brand-light: #59B2FF;
   --brand-mid: #3487CF;
   --brand-dark: #1D6FB6;
+
+  /* Accent colors*/
+
+  --purple: #B259FF;
+  --fuschia: #FF59F9;
+  --pink: #FF598B;
+  --orange: #FF8B59;
+  --yellow: #FFCD59;
+  --lime: #E1FF59;
+  --green: #59FF91;
+  --cyan: #59FFF9;
+  --navy: #6A59FF; 
+   
 }
 
 body {
   font: var(--text-md);
   color: var(--text-body);
+
+  display: grid;
+  grid-template-columns: 48.75rem 51.25rem;
+
+  overflow: hidden;
+  height: 100vh;
 }
+
