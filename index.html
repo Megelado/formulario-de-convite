@@ -10,7 +10,8 @@
   <link rel="stylesheet" href="styles/index.css">
   <link href="https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
@@ -22,8 +23,38 @@
     </header>
   </aside>
   <main class="main-content">
+    <h1>Crie seu convite</h1>
     <form>
-      
+      <fieldset class="about-event">
+        <img src="assets/icons/calendar.svg" alt="">
+        <h2>Sobre o evento</h2>
+        <label for="title">Título</label>
+        <input type="text" name="title" id="title" placeholder="Nome do evento">
+        <label for="start">Início</label>
+        <input type="date" name="start" id="start">
+        <label for="end">Fim</label>
+        <input type="date" name="end" id="end">
+        <div class="radio-wrapper">
+
+          <label>Tipo</label>
+          <div class="radio-inner">
+            <div class="radio-image"></div>
+            <input type="radio" name="in-person" id="type" value="Presencial">
+            <label for="in-person">Presencial</label>
+          </div>
+          <div class="radio-inner">
+            <div class="radio-image"></div>
+            <input type="radio" name="online" id="type" value="Online">
+            <label for="online">Online</label>
+          </div>
+
+        </div>
+        <label for="location">Local</label>
+        <input type="text" name="location" id="location" placeholder="Link ou endereço">
+        <label for="desc">Descrição</label>
+        <textarea name="desc" cols="30" rows="10" placeholder="Escreva sobre os detalhes do evento"></textarea>
+      </fieldset>
+
     </form>
   </main>
 </body>

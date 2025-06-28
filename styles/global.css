@@ -48,7 +48,20 @@
   --lime: #E1FF59;
   --green: #59FF91;
   --cyan: #59FFF9;
-  --navy: #6A59FF; 
+  --navy: #6A59FF;
+  
+  /*Input*/
+
+  --input-base: #1C1F21;
+  --input-stroke: #363B40;
+  --input-placeholder: #869198;
+
+  /*Shape*/
+
+  --shape-background: #131516;
+  --shape-body: #212427;
+  --shape-button: #2D3136;
+  --shape-hover: #383D42;
    
 }
 
@@ -59,7 +72,12 @@ body {
   display: grid;
   grid-template-columns: 48.75rem 51.25rem;
 
+  background-color: var(--shape-body);
+
   overflow: hidden;
   height: 100vh;
 }
 
+h1, h2, h3 {
+  color: var(--text-heading);
+}
