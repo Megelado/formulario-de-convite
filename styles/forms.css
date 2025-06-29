@@ -1,0 +1,65 @@
+@import url(fields/index.css);
+
+/* ---------- MAIN CONTENT ---------- */
+.main-content {
+  width: 100vw;
+  height: 100vh;
+  padding: 12px;
+  overflow-y: auto;
+}
+
+/* Título principal do formulário */
+.main-content h2 {
+  margin-bottom: 2rem;
+}
+
+/* ---------- FORMULÁRIO EM GRID ---------- */
+form {
+  all: unset;
+  box-sizing: border-box;
+  /* display: grid; */
+  /* grid-template-columns: repeat(2, 1fr); */
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+/* Itens que devem ocupar as duas colunas */
+.full-width,
+.title-wrapper,
+.desc-wrapper,
+.about-event > h2,
+.about-event > img {
+  grid-column: span 2;
+}
+
+/* ---------- CAMPOS E INPUTS ---------- */
+input[type="text"],
+input[type="date"],
+textarea {
+  background-color: var(--input-base);
+  border: 1px solid var(--input-stroke);
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  color: var(--text-heading);
+  width: 100%;
+  font: var(--text-md);
+}
+
+input::placeholder,
+textarea::placeholder, input[type="date"] {
+  color: var(--input-placeholder);
+}
+
+/* ---------- LABELS ---------- */
+label {
+  font: var(--span-sm);
+  color: var(--text-heading);
+  margin-bottom: 0.25rem;
+  display: inline-block;
+}
+
+/* ---------- TEXTAREA ---------- */
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}

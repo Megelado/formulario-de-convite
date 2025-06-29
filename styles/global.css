@@ -68,16 +68,49 @@
 body {
   font: var(--text-md);
   color: var(--text-body);
-
+/* 
   display: grid;
-  grid-template-columns: 48.75rem 51.25rem;
+  grid-template-columns: 1fr 2fr; */
 
   background-color: var(--shape-body);
 
   overflow: hidden;
   height: 100vh;
+
 }
+
 
 h1, h2, h3 {
   color: var(--text-heading);
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+  /* width: 100%; */
+}
+
+.flex {
+  display: flex;
+}
+
+.date {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  .inicio-date {
+    margin-right: 24px;
+  }
+  
+}
+
+
+/* Garante que ambos tenham 50% do espaço */
+.flex-1, .flex-2 {
+  flex: 1;
+}
+
+label {
+  padding: 12px;
 }

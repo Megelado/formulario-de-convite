@@ -1,3 +1,11 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100vh;
+  width: 100vw;
+  /* overflow: hidden; */
+}
+
 aside {
   background-image: url(../assets/images/Background.png);
   background-repeat: no-repeat;
@@ -7,7 +15,6 @@ aside {
   padding: 2rem 4rem 4rem 4rem; /* ⬅ padding-top menor */
 
   width: 100%;
-  max-width: 31rem;
   height: 100vh;
 
   display: flex;
@@ -37,9 +44,13 @@ aside {
   }
 }
 
-
-
-
 main {
+  height: 100vh;           /* ocupa a altura da viewport */
   overflow: auto;
+  padding: 1rem; 
+  
+  display: grid;
+  justify-content: center;
+  align-items: center;
 }
+

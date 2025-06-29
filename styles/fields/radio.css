@@ -1,0 +1,64 @@
+.radio-group {
+  display: flex;
+  height: 3rem;
+  margin-top: 0.5rem;
+  padding: 0.25rem;
+  background-color: var(--input-base);
+  border: 1px solid var(--input-stroke);
+  border-radius: 0.5rem;
+  gap: 1rem;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.radio-button {
+  flex: 1; /* Cada botão ocupa metade */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  padding: 0.75rem 1rem;
+  background-color: var(--input-base);
+  border-radius: 0.5rem;
+  color: var(--text-body);
+  font: var(--span-sm);
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.radio-button:hover {
+  background-color: var(--shape-hover);
+}
+
+/* Ícone padrão */
+.radio-icon {
+  width: 24px;
+  height: 24px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.radio-button .radio-icon[data-icon="building"] {
+  background-image: url('../../assets/icons/building-2.svg');
+}
+
+.radio-button .radio-icon[data-icon="video"] {
+  background-image: url('../../assets/icons/video.svg');
+}
+
+/* Estilo do botão SELECIONADO */
+input[type="radio"]:checked + .radio-button {
+  background-color: var(--shape-hover);
+  color: var(--text-heading);
+}
+
+/* Trocar ícone quando selecionado */
+input[type="radio"]:checked + .radio-button .radio-icon[data-icon="building"] {
+  background-image: url('../../assets/icons/building-hover.svg');
+}
+
+input[type="radio"]:checked + .radio-button .radio-icon[data-icon="video"] {
+  background-image: url('../../assets/icons/video-hover.svg');
+}
