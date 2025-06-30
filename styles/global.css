@@ -106,23 +106,6 @@ fieldset {
   
 }
 
-textarea {
-  all: unset;
-  appearance: none;
-  width: 80%;
-  height: 50%;
-  border-radius: .5rem;
-  border: 2px solid transparent;
-  background-color: var(--input-base);
-  outline: 1px solid var(--input-stroke);
-
-  padding: .25rem .5rem;
-}
-
-textarea::placeholder {
-  color: var(--input-placeholder);
-}
-
 .personalization {
   padding-top: 3rem;
 }

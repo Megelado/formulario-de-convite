@@ -13,6 +13,20 @@
   color: var(--input-placeholder);
 }
 
+.about-event input:focus {
+  color: var(--text-heading);
+  outline: 1px solid var(--brand-light);
+}
+
+.about-event input.error {
+  border-color: var(--danger);
+}
+
+/* 
+.about-event input:required {
+  outline: 1px solid var(--danger);
+} */
+
 .date {
   display: grid;
   grid-template-columns: 1fr 1fr;

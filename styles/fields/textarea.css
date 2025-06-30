@@ -1,0 +1,24 @@
+textarea {
+  appearance: none;
+  box-sizing: border-box;
+
+  border: 2px solid var(--input-stroke);
+  outline: none;
+
+  width: 100%;
+  height: 150px;
+
+  padding: .5rem;
+  border-radius: .5rem;
+
+  background-color: var(--input-base);
+  color: var(--text-body);
+
+  font: inherit;
+}
+
+textarea:focus-visible {
+  border-color: var(--brand-light);
+  outline: none;
+}
+
