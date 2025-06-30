@@ -18,14 +18,12 @@
     height: 1rem;
     margin: .25rem;
   }
-  /* & label {
-    margin: 10px 10px 10px 0;
-  } */
 }
 
 .custom-file-label {
   color: var(--text-heading);
   padding: .25rem;
+  cursor: pointer;
 }
 
 #file-name {

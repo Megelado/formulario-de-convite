@@ -6,32 +6,52 @@
   margin: .25rem;
 
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0;
 
   box-sizing: border-box;
   overflow: hidden;
   position: relative;
+
+  /* Aplica a borda ao item selecionado */
+  border: 2px solid transparent;
 }
 
+.radio-inner:hover {
+  background-color: var(--shape-hover);
+}
+
+.radio-inner:has(input[type="radio"]:checked) {
+  border: 3px solid var(--brand-light);
+}
+
+/* Oculta o input */
 .radio-inner input[type="radio"] {
   display: none;
 }
 
-.radio-inner img {
-  width: 126px;
-  max-width: 126px;
-  height: 64px;
-  border-radius: 4px;
-  display: block;
-  margin: 4px 4px 0 4px;
-}
-
+/* Centraliza conteúdo dentro do label */
 .radio-inner label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
   text-align: center;
   color: var(--text-body);
   font-size: 0.875rem;
-  margin: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  padding: 4px;
+  box-sizing: border-box;
+}
+
+.radio-inner img {
+  width: 100%;
+  max-width: 126px;
+  height: 64px;
+  border-radius: 4px;
+  object-fit: cover;
+  margin-bottom: 0.25rem;
 }

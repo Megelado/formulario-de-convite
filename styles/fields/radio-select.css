@@ -1,6 +1,5 @@
 .radio-select {
   box-sizing: border-box;
-  /* flex-direction: ; */
 
   & input[type="radio"] {
     all: unset;
@@ -10,6 +9,7 @@
     border: 6px solid var(--shape-button);
     border-radius: 999px;
     margin-right: 12px;
+    cursor: pointer;
 
     &.light {
       background-color: var(--brand-light);
