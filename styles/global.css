@@ -7,21 +7,21 @@
 :root {
   /*titulos*/
 
-  --logo: 400 40px/auto "Leckerli One", cursive;
-  --h2: 800 28px/auto "Baloo 2", sans-serif;
-  --h3: 800 18px/auto "Baloo 2", sans-serif;
+  --logo: 400 2.5rem/auto "Leckerli One", cursive;
+  --h2: 800 1.75rem/auto "Baloo 2", sans-serif;
+  --h3: 800 1.125rem/auto "Baloo 2", sans-serif;
 
   /*Span*/
 
-  --span-md: 600 16px/auto "Open Sans", sans-serif;
-  --span-sm: 600 14px/auto "Open Sans", sans-serif;
-  --span-xs: 600 12px/auto "Open Sans", sans-serif;
+  --span-md: 600 1rem/auto "Open Sans", sans-serif;
+  --span-sm: 600 .875rem/auto "Open Sans", sans-serif;
+  --span-xs: 600 .75rem/auto "Open Sans", sans-serif;
 
   /*Texto*/
 
-  --text-md: 400 16px/auto "Open Sans", sans-serif;
-  --text-sm: 400 14px/auto "Open Sans", sans-serif;
-  --text-xs: 400 12px/auto "Open Sans", sans-serif;
+  --text-md: 400 1rem/auto "Open Sans", sans-serif;
+  --text-sm: 400 .875rem/auto "Open Sans", sans-serif;
+  --text-xs: 400 .75rem/auto "Open Sans", sans-serif;
 
   /*cores dos textos*/
 
@@ -124,7 +124,7 @@ textarea::placeholder {
 }
 
 .personalization {
-  padding-top: 48px;
+  padding-top: 3rem;
 }
 
 .flex {
@@ -136,7 +136,19 @@ textarea::placeholder {
   flex: 1;
 }
 
-.grid {
+.select-theme {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 }
+
+.grid-cols-2 {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+} 

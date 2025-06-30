@@ -97,25 +97,25 @@
             <div class="flex">
 
               <input type="radio" name="color" id="light" class="light">
-  
+
               <input type="radio" name="color" id="navy" class="navy">
-  
+
               <input type="radio" name="color" id="purple" class="purple">
-  
+
               <input type="radio" name="color" id="fuschia" class="fuschia">
-  
+
               <input type="radio" name="color" id="pink" class="pink">
-  
+
               <input type="radio" name="color" id="danger" class="danger">
-  
+
               <input type="radio" name="color" id="orange" class="orange">
-  
+
               <input type="radio" name="color" id="yellow" class="yellow">
-  
+
               <input type="radio" name="color" id="lime" class="lime">
-  
+
               <input type="radio" name="color" id="green" class="green">
-  
+
               <input type="radio" name="color" id="cyan" class="cyan">
             </div>
 
@@ -185,6 +185,33 @@
                 <label for="">Outro</label>
               </div>
             </div>
+          </div>
+          <div class="grid-cols-2">
+            <div class="grid-2">
+              <label for="toggle-switch">Estilo</label>
+              <div></div>
+              <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+              </label>
+              <label for="day-or-night">Escuro</label>
+            </div>
+
+            <div class="col-b">
+              <label for="picture">Foto de capa</label>
+              <div class="file-group">
+                <input type="file" id="arquivo" hidden>
+                <div class="button-file">
+                  <img src="assets/icons/upload.svg" alt="">
+  
+                  <label for="arquivo" class="custom-file-label">Selecionar</label>
+
+                </div>
+                <span id="file-name">Nenhum arquivo selecionado</span>
+              </div>
+
+            </div>
+
           </div>
         </fieldset>
       </form>
