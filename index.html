@@ -104,7 +104,7 @@
 
               <input type="radio" name="color" id="fuschia" class="fuschia">
 
-              <input type="radio" name="color" id="pink" class="pink">
+              <input type="radio" name="color" id="pink" class="pink" checked>
 
               <input type="radio" name="color" id="danger" class="danger">
 
@@ -203,13 +203,12 @@
                 <input type="file" id="arquivo" hidden>
                 <div class="button-file">
                   <img src="assets/icons/upload.svg" alt="">
-  
+
                   <label for="arquivo" class="custom-file-label">Selecionar</label>
 
                 </div>
                 <span id="file-name">Nenhum arquivo selecionado</span>
               </div>
-
             </div>
 
           </div>
@@ -218,6 +217,61 @@
     </main>
 
   </div>
+  <script>
+    const inputArquivo = document.getElementById('arquivo');
+    const nomeArquivo = document.getElementById('file-name');
+
+    let erroArquivo = null; // guarda a referência da mensagem de erro
+
+    inputArquivo.addEventListener('change', () => {
+      const arquivo = inputArquivo.files[0];
+      const fileGroup = inputArquivo.closest('.file-group');
+
+      const corPlaceholder = getComputedStyle(document.documentElement).getPropertyValue('--input-placeholder');
+      const corTexto = getComputedStyle(document.documentElement).getPropertyValue('--text-heading');
+
+      const permitidos = ['jpg', 'jpeg', 'pdf', 'svg', 'png'];
+
+      if (arquivo) {
+        const extensao = arquivo.name.split('.').pop().toLowerCase();
+
+        if (permitidos.includes(extensao)) {
+          // Arquivo válido → mostra nome e remove erro (se houver)
+          nomeArquivo.textContent = arquivo.name;
+          nomeArquivo.style.color = corTexto;
+
+          if (erroArquivo) {
+            erroArquivo.remove();
+            erroArquivo = null;
+          }
+
+        } else {
+          // Arquivo inválido → mostra mensagem de erro, mantém "Nenhum arquivo selecionado"
+          nomeArquivo.textContent = 'Nenhum arquivo selecionado';
+          nomeArquivo.style.color = corPlaceholder;
+
+          if (!erroArquivo) {
+            erroArquivo = document.createElement('span');
+            erroArquivo.classList.add('error-msg');
+            erroArquivo.innerHTML = `<img src="assets/icons/circle-alert.svg" alt=""> Error message`;
+            fileGroup.insertAdjacentElement('afterend', erroArquivo);
+          }
+        }
+      } else {
+        // Nenhum arquivo → resetar tudo
+        nomeArquivo.textContent = 'Nenhum arquivo selecionado';
+        nomeArquivo.style.color = corPlaceholder;
+
+        if (erroArquivo) {
+          erroArquivo.remove();
+          erroArquivo = null;
+        }
+      }
+    });
+  </script>
+
+
+
 </body>
 
 </html>
