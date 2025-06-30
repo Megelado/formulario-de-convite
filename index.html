@@ -27,7 +27,7 @@
       <h2>Crie seu convite</h2>
       <form class="form-grid">
         <fieldset class="about-event">
-          <div class="flex">
+          <div class="flex titulo-sessao-1">
             <img src="assets/icons/calendar.svg" alt="">
             <h3>Sobre o evento</h3>
           </div>
@@ -35,41 +35,50 @@
             <label for="title">Título</label>
             <input type="text" name="title" id="title" placeholder="Nome do evento">
           </div>
-          <div class="flex date">
-            <div class="inicio-date flex-1">
+          <div class="date">
+            <div class="inicio-date">
               <label for="start">Início</label>
               <input type="date" name="start" id="start">
             </div>
-            <div class="fim-date flex-2">
+
+            <div class="fim-date">
               <label for="end">Fim</label>
               <input type="date" name="end" id="end">
             </div>
           </div>
+
           <div class="flex">
 
             <div class="tipo-evento full-width">
-              <label>Tipo</label>
-              <div class="radio-group flex-1">
+              <div class="tipo-layout">
+                <!-- Bloco do Tipo -->
+                <div class="tipo-wrapper">
+                  <label for="type">Tipo</label>
+                  <div class="radio-group">
+                    <input type="radio" name="type" id="presencial" value="Presencial" hidden>
+                    <label for="presencial" class="radio-button">
+                      <div class="radio-icon" data-icon="building"></div>
+                      Presencial
+                    </label>
 
-                <input type="radio" name="type" id="presencial" value="Presencial" hidden>
-                <label for="presencial" class="radio-button">
-                  <div class="radio-icon" data-icon="building"></div>
-                  Presencial
-                </label>
+                    <input type="radio" name="type" id="online" value="Online" hidden>
+                    <label for="online" class="radio-button">
+                      <div class="radio-icon" data-icon="video"></div>
+                      Online
+                    </label>
+                  </div>
+                </div>
 
-                <input type="radio" name="type" id="online" value="Online" hidden>
-                <label for="online" class="radio-button">
-                  <div class="radio-icon" data-icon="video"></div>
-                  Online
-                </label>
+                <!-- Bloco do Local -->
+                <div class="location-wrapper">
+                  <label for="location">Local</label>
+                  <input type="text" name="location" id="location" placeholder="Link ou endereço">
+                </div>
               </div>
             </div>
 
 
-            <div class="location-wrapper flex-2">
-              <label for="location">Local</label>
-              <input type="text" name="location" id="location" placeholder="Link  ou endereço">
-            </div>
+
           </div>
           <div class="desc-wrapper full-width">
             <label for="desc">Descrição</label>
@@ -77,6 +86,107 @@
           </div>
         </fieldset>
 
+        <fieldset class="personalization">
+          <div class="flex">
+            <img src="assets/icons/paintbrush-vertical.svg" alt="Imagem do pincel">
+            <h3>Personalização</h3>
+          </div>
+          <div class="radio-select">
+
+            <label for="color">Cor principal</label>
+            <div class="flex">
+
+              <input type="radio" name="color" id="light" class="light">
+  
+              <input type="radio" name="color" id="navy" class="navy">
+  
+              <input type="radio" name="color" id="purple" class="purple">
+  
+              <input type="radio" name="color" id="fuschia" class="fuschia">
+  
+              <input type="radio" name="color" id="pink" class="pink">
+  
+              <input type="radio" name="color" id="danger" class="danger">
+  
+              <input type="radio" name="color" id="orange" class="orange">
+  
+              <input type="radio" name="color" id="yellow" class="yellow">
+  
+              <input type="radio" name="color" id="lime" class="lime">
+  
+              <input type="radio" name="color" id="green" class="green">
+  
+              <input type="radio" name="color" id="cyan" class="cyan">
+            </div>
+
+          </div>
+          <div class="radio-theme">
+            <label class="theme">Tema do evento</label>
+            <div class="select-theme grid">
+
+              <div class="radio-inner">
+                <input type="radio" name="tema" id="aniversario">
+                <img src="assets/images/ThemeSelection-1.svg" alt="">
+                <label for="aniversario">Aniversário</label>
+              </div>
+              <div class="radio-inner">
+                <input type="radio" name="tema" id="infantil">
+                <img src="assets/images/ThemeSelection-2.svg" alt="">
+                <label for="infantil">Infantil</label>
+              </div>
+              <div class="radio-inner">
+                <input type="radio" name="tema" id="formatura">
+                <img src="assets/images/ThemeSelection-3.svg" alt="">
+                <label for="formatura">Formatura</label>
+              </div>
+              <div class="radio-inner">
+                <input type="radio" name="tema" id="casamento">
+                <img src="assets/images/ThemeSelection-4.svg" alt="">
+                <label for="casamento">Casamento</label>
+              </div>
+              <div class="radio-inner">
+                <input type="radio" name="tema" id="cha-de-bebe">
+                <img src="assets/images/ThemeSelection-5.svg" alt="">
+                <label for="cha-de-bebe">Chá de bebê</label>
+              </div>
+              <div class="radio-inner">
+                <input type="radio" name="tema" id="cha-de-panela">
+                <img src="assets/images/ThemeSelection-6.svg" alt="">
+                <label for="cha-de-panela">Chá de panela</label>
+              </div>
+              <div class="radio-inner">
+                <input type="radio" name="tema" id="carnaval">
+                <img src="assets/images/ThemeSelection-7.svg" alt="">
+                <label for="carnaval">Carnaval</label>
+              </div>
+              <div class="radio-inner">
+                <input type="radio" name="tema" id="pascoa">
+                <img src="assets/images/ThemeSelection-8.svg" alt="">
+                <label for="pascoa">Páscoa</label>
+              </div>
+              <div class="radio-inner">
+                <input type="radio" name="tema" id="sao-joao">
+                <img src="assets/images/ThemeSelection-9.svg" alt="">
+                <label for="sao-joao">São João</label>
+              </div>
+              <div class="radio-inner">
+                <input type="radio" name="tema" id="halloween">
+                <img src="assets/images/ThemeSelection-10.svg" alt="">
+                <label for="halloween">Halloween</label>
+              </div>
+              <div class="radio-inner">
+                <input type="radio" name="tema" id="natal">
+                <img src="assets/images/ThemeSelection-11.svg" alt="">
+                <label for="natal">Natal</label>
+              </div>
+              <div class="radio-inner">
+                <input type="radio" name="tema" id="outro">
+                <img src="assets/images/ThemeSelection-12.svg" alt="">
+                <label for="">Outro</label>
+              </div>
+            </div>
+          </div>
+        </fieldset>
       </form>
     </main>
 

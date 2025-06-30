@@ -6,7 +6,6 @@
   background-color: var(--input-base);
   border: 1px solid var(--input-stroke);
   border-radius: 0.5rem;
-  gap: 1rem;
 }
 
 input[type="radio"] {
@@ -25,7 +24,6 @@ input[type="radio"] {
   color: var(--text-body);
   font: var(--span-sm);
   cursor: pointer;
-  transition: background-color 0.2s, border-color 0.2s;
 }
 
 .radio-button:hover {
@@ -61,4 +59,57 @@ input[type="radio"]:checked + .radio-button .radio-icon[data-icon="building"] {
 
 input[type="radio"]:checked + .radio-button .radio-icon[data-icon="video"] {
   background-image: url('../../assets/icons/video-hover.svg');
+}
+.tipo-layout {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  margin-top: 0.5rem;
+}
+
+/* Cada bloco empilhado verticalmente */
+.tipo-wrapper,
+.location-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* Mantém os estilos dos radios como você já tinha */
+.radio-group {
+  display: flex;
+  height: 3rem;
+  margin-top: 0.5rem;
+  padding: 0.25rem;
+  background-color: var(--input-base);
+  border: 1px solid var(--input-stroke);
+  border-radius: 0.5rem;
+}
+
+/* Radio button segue como está */
+.radio-button {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background-color: var(--input-base);
+  border-radius: 0.5rem;
+  color: var(--text-body);
+  font: var(--span-sm);
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+/* Input de local */
+.location-wrapper input[type="text"] {
+  height: 3rem;
+  margin-top: 0.5rem;
+  padding: 0 1rem;
+  border: 1px solid var(--input-stroke);
+  border-radius: 0.5rem;
+  background-color: var(--input-base);
+  color: var(--text-body);
+  font: var(--span-sm);
+  box-sizing: border-box;
 }
