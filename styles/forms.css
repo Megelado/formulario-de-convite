@@ -27,7 +27,7 @@ form {
 }
 
 /* ---------- CAMPOS E INPUTS ---------- */
-input[type="text"], textarea {
+input[type="text"] {
   background-color: var(--input-base);
   border: 1px solid var(--input-stroke);
   padding: 0.75rem 1rem;

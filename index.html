@@ -247,6 +247,44 @@
 
           </div>
         </fieldset>
+        <fieldset class="contact-details">
+          <div class="flex">
+            <img src="assets/icons/contact.svg" alt="">
+            <h3>Dados para contato</h3>
+          </div>
+          <div class="full-width">
+            <label for="name">Nome</label>
+            <input type="text" id="name" name="name" placeholder="Nome do evento">
+          </div>
+
+          <div class="input-pair">
+            <div class="input-labels">
+              <label for="email">E-mail</label>
+              <label for="phone">Telefone</label>
+            </div>
+            <div class="input-fields">
+              <input type="email" id="email" placeholder="exemplo@email.com">
+              <input type="tel" id="phone" placeholder="(99) 99999-9999">
+            </div>
+          </div>
+
+
+        </fieldset>
+        <footer>
+          <div class="flex">
+            <input type="checkbox" name="terms" id="terms">
+            <label class="check" for="terms">Li e concordo com os Termos e Condições e com a Política de Privacidade</label>
+          </div>
+          <div class="flex">
+            <input type="checkbox" name="receive-mail" id="receive-mail">
+            <label class="check" for="receive-mail">Aceito receber atualizações e promoções por e-mail</label>
+          </div>
+          <div class="flex">
+            <input type="checkbox" name="sms" id="sms">
+            <label class="check" for="sms">Aceito receber atualizações e promoções por SMS</label>
+          </div>
+          <button type="submit"> <img src="assets/icons/ticket.svg" alt=""> Gerar convite</button>
+        </footer>
       </form>
     </main>
 

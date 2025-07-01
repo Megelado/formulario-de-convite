@@ -1,0 +1,7 @@
+.check {
+  all: unset;
+  padding: .25rem;
+  font: var(--text-sm);
+  color: var(--text-body);
+  display: block;
+}

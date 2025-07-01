@@ -18,6 +18,9 @@
     height: 1rem;
     margin: .25rem;
   }
+  &:hover {
+    background-color: var(--shape-hover);
+  }
 }
 
 .custom-file-label {

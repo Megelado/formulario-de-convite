@@ -1,6 +1,6 @@
 .container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 25rem 51.25rem;
   height: 100vh;
   width: 100vw;
   gap: 1rem;
@@ -48,7 +48,7 @@ aside {
 main {
   height: 100vh;           /* ocupa a altura da viewport */
   overflow: auto;
-  padding: 1rem 1rem 1rem; 
+  padding: .8rem .8rem .8rem; 
   
   display: grid;
   justify-content: flex-start;
