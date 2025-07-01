@@ -7,9 +7,14 @@
   outline: 1px solid var(--input-stroke);
 
   padding: .75rem 1rem;
+
+  &:hover {
+    outline: 1px solid var(--input-placeholder);
+  }
 }
 
-.about-event input::placeholder, input[type="date"] {
+.about-event input::placeholder,
+input[type="date"] {
   color: var(--input-placeholder);
 }
 
@@ -22,11 +27,6 @@
   border-color: var(--danger);
 }
 
-/* .contact-details .grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-} */
-
 .contact-details input {
   all: unset;
   appearance: none;
@@ -36,6 +36,10 @@
   outline: 1px solid var(--input-stroke);
 
   padding: .75rem 1rem;
+
+  &:hover {
+    outline: 1px solid var(--input-placeholder);
+  }
 }
 
 .contact-details input:focus {
@@ -94,8 +98,10 @@
 }
 
 .date input[type="date"] {
-  width: 100%; /* importante para impedir que um input ultrapasse o espaço */
-  box-sizing: border-box; /* evita que padding ou border somem à largura */
+  width: 100%;
+  /* importante para impedir que um input ultrapasse o espaço */
+  box-sizing: border-box;
+  /* evita que padding ou border somem à largura */
 }
 
 label {

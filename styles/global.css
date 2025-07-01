@@ -81,7 +81,7 @@ h1, h2, h3 {
 }
 
 h2 {
-    margin-bottom: 3rem;
+    margin-top: 4rem;
 }
 
 h3 {
@@ -115,6 +115,13 @@ fieldset {
   display: flex;
 }
 
+.flex-end {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin-block: 3rem;
+}
+
 /* Garante que ambos tenham 50% do espaço */
 .flex-1, .flex-2 {
   flex: 1;
@@ -135,4 +142,30 @@ fieldset {
   grid-template-columns: repeat(2, 1fr);
   justify-content: center;
   align-items: center;
+}
+
+button {
+  all: unset;
+  background-color: var(--brand-dark);
+  border-radius: .5rem;
+  padding: .1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .75rem;
+  height: 2.8rem;
+
+  cursor: pointer;
+
+  & img {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-left: 1.25rem;
+  }
+  & span {
+    margin-right: 1.25rem;
+  }
+  &:hover {
+    background-color: var(--brand-mid);
+  }
 }

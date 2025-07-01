@@ -6,6 +6,9 @@ textarea {
   color: var(--text-heading);
   width: 100%;
   font: var(--text-md);
+  &:hover {
+    outline: 1px solid var(--input-placeholder);
+  }
 }
 textarea:focus-visible {
   border-color: var(--brand-light);

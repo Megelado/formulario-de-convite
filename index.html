@@ -271,19 +271,21 @@
 
         </fieldset>
         <footer>
-          <div class="flex">
+          <div class="checkbox-flex">
             <input type="checkbox" name="terms" id="terms">
-            <label class="check" for="terms">Li e concordo com os Termos e Condições e com a Política de Privacidade</label>
+            <label class="check" for="terms">Li e concordo com os <span class="termos">Termos e Condições</span> e com a <span class="politica">Política de Privacidade</span></label>
           </div>
-          <div class="flex">
+          <div class="checkbox-flex">
             <input type="checkbox" name="receive-mail" id="receive-mail">
             <label class="check" for="receive-mail">Aceito receber atualizações e promoções por e-mail</label>
           </div>
-          <div class="flex">
+          <div class="checkbox-flex">
             <input type="checkbox" name="sms" id="sms">
             <label class="check" for="sms">Aceito receber atualizações e promoções por SMS</label>
           </div>
-          <button type="submit"> <img src="assets/icons/ticket.svg" alt=""> Gerar convite</button>
+          <div class="flex-end">
+            <button type="submit"> <img src="assets/icons/ticket.svg" alt=""> <span>Gerar convite</span></button>
+          </div>
         </footer>
       </form>
     </main>

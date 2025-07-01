@@ -3,5 +3,42 @@
   padding: .25rem;
   font: var(--text-sm);
   color: var(--text-body);
-  display: block;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.checkbox-flex {
+  display: flex;
+  align-items: center;
+}
+
+input[type="checkbox"]{
+  all: unset;
+  width: 1.25rem;
+  height: 1.25rem;
+
+  cursor: pointer;
+
+  background-color: var(--input-base);
+
+  border: 1px solid var(--input-stroke);
+  border-radius: .25rem;
+
+  margin-right: .75rem;
+}
+
+input[type="checkbox"]:hover {
+  border-color: var(--input-placeholder);
+}
+
+input[type="checkbox"]:checked {
+  background: url(../../assets/icons/check.svg) center/cover;
+  border-color: var(--brand-light);
+}
+
+.termos, .politica {
+  color: var(--brand-light);
+  font: var(--span-sm);
+  text-decoration: underline;
+  text-decoration-color: var(--brand-light);
 }
