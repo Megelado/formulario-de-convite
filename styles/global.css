@@ -70,18 +70,12 @@ body {
   color: var(--text-body);
 
   background-color: var(--shape-body);
-
-  /* overflow: hidden; */
-  /* height: 100vh; */
+  height: 100vh;
 
 }
 
 h1, h2, h3 {
   color: var(--text-heading);
-}
-
-h2 {
-    margin-top: 4rem;
 }
 
 h3 {
@@ -144,7 +138,7 @@ fieldset {
   align-items: center;
 }
 
-button {
+.enviar {
   all: unset;
   background-color: var(--brand-dark);
   border-radius: .5rem;
@@ -187,4 +181,8 @@ button {
   border: 2px solid var(--danger);
   border-radius: 4px;
   outline: none;
+}
+
+.one-hundred {
+  width: 100%;
 }

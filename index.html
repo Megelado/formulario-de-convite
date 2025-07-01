@@ -25,18 +25,18 @@
       </header>
     </aside>
     <main class="main-content">
-      <h2>Crie seu convite</h2>
       <form class="form-grid">
+        <h2>Crie seu convite</h2>
         <fieldset class="about-event">
           <div class="flex titulo-sessao-1">
             <img src="assets/icons/calendar.svg" alt="">
             <h3>Sobre o evento</h3>
           </div>
-          <div class="title-wrapper full-width">
+          <div class="title-wrapper">
             <label for="title">Título</label>
             <input type="text" name="title" id="title" placeholder="Nome do evento" required>
           </div>
-          <div class="date">
+          <div class="date one-hundred">
             <div class="inicio-date">
               <label for="start">Início</label>
               <input type="date" name="start" id="start" required>
@@ -50,7 +50,7 @@
 
           <div class="flex">
 
-            <div class="tipo-evento full-width">
+            <div class="tipo-evento one-hundred">
               <div class="tipo-layout">
                 <!-- Bloco do Tipo -->
                 <div class="tipo-wrapper">
@@ -94,34 +94,23 @@
             <h3>Personalização</h3>
           </div>
           <div class="radio-select">
-
             <label for="color">Cor principal</label>
             <div class="flex">
-
-              <input type="radio" name="color" id="light" class="light">
-
-              <input type="radio" name="color" id="navy" class="navy">
-
-              <input type="radio" name="color" id="purple" class="purple">
-
-              <input type="radio" name="color" id="fuschia" class="fuschia">
-
-              <input type="radio" name="color" id="pink" class="pink" checked>
-
-              <input type="radio" name="color" id="danger" class="danger">
-
-              <input type="radio" name="color" id="orange" class="orange">
-
-              <input type="radio" name="color" id="yellow" class="yellow">
-
-              <input type="radio" name="color" id="lime" class="lime">
-
-              <input type="radio" name="color" id="green" class="green">
-
-              <input type="radio" name="color" id="cyan" class="cyan">
+              <label><input type="radio" name="color" class="light"></label>
+              <label><input type="radio" name="color" class="navy"></label>
+              <label><input type="radio" name="color" class="purple"></label>
+              <label><input type="radio" name="color" class="fuschia"></label>
+              <label><input type="radio" name="color" class="pink" checked></label>
+              <label><input type="radio" name="color" class="danger"></label>
+              <label><input type="radio" name="color" class="orange"></label>
+              <label><input type="radio" name="color" class="yellow"></label>
+              <label><input type="radio" name="color" class="lime"></label>
+              <label><input type="radio" name="color" class="green"></label>
+              <label><input type="radio" name="color" class="cyan"></label>
             </div>
-
           </div>
+
+
           <div class="radio-theme">
             <label class="theme">Tema do evento</label>
             <div class="select-theme grid">
@@ -227,14 +216,16 @@
               <label for="toggle-switch">Estilo</label>
               <div></div>
               <label class="switch">
-                <input type="checkbox">
+                <input type="checkbox" name="toggle-switch">
                 <span class="slider round"></span>
               </label>
               <label for="day-or-night">Escuro</label>
             </div>
 
             <div class="col-b">
-              <label for="picture">Foto de capa</label>
+              <div class="titulo">
+                <label for="picture">Foto de capa</label>
+              </div>
               <div class="file-group">
                 <input type="file" id="arquivo" hidden>
                 <div class="button-file">
@@ -254,7 +245,7 @@
             <img src="assets/icons/contact.svg" alt="">
             <h3>Dados para contato</h3>
           </div>
-          <div class="full-width">
+          <div class="one-hundred">
             <label for="name">Nome</label>
             <input type="text" id="name" name="name" placeholder="Nome do evento" required>
           </div>
@@ -288,7 +279,8 @@
             <label class="check" for="sms">Aceito receber atualizações e promoções por SMS</label>
           </div>
           <div class="flex-end">
-            <button type="submit"> <img src="assets/icons/ticket.svg" alt=""> <span>Gerar convite</span></button>
+            <button class="enviar" type="submit"> <img src="assets/icons/ticket.svg" alt=""> <span>Gerar
+                convite</span></button>
           </div>
         </footer>
       </form>
@@ -300,8 +292,8 @@
     const nomeArquivo = document.getElementById('file-name');
     const form = document.querySelector('form');
 
+    // === ERRO DE ARQUIVO (já existente) ===
     let erroArquivo = null;
-
     inputArquivo.addEventListener('change', () => {
       const arquivo = inputArquivo.files[0];
       const fileGroup = inputArquivo.closest('.file-group');
@@ -317,7 +309,6 @@
         if (permitidos.includes(extensao)) {
           nomeArquivo.textContent = arquivo.name;
           nomeArquivo.style.color = corTexto;
-
           if (erroArquivo) {
             erroArquivo.remove();
             erroArquivo = null;
@@ -329,14 +320,13 @@
           if (!erroArquivo) {
             erroArquivo = document.createElement('span');
             erroArquivo.classList.add('error-msg');
-            erroArquivo.innerHTML = `<img src="assets/icons/circle-alert.svg" alt=""> Tipo de arquivo não permitido`;
+            erroArquivo.innerHTML = `<img src="assets/icons/circle-alert.svg" alt=""> Error message`;
             fileGroup.insertAdjacentElement('afterend', erroArquivo);
           }
         }
       } else {
         nomeArquivo.textContent = 'Nenhum arquivo selecionado';
         nomeArquivo.style.color = corPlaceholder;
-
         if (erroArquivo) {
           erroArquivo.remove();
           erroArquivo = null;
@@ -344,44 +334,59 @@
       }
     });
 
+    // === ERROS GERAIS EM INPUTS ===
+    const mostrarErro = (campo) => {
+      const wrapper = campo.closest('.full-width')
+        || campo.closest('.input-fields')
+        || campo.closest('.location-wrapper')
+        || campo.closest('.desc-wrapper')
+        || campo.closest('.input-pair')
+        || campo.closest('div')
+        || campo.parentElement;
+
+      // Remover erro antigo
+      const erroAntigo = wrapper.querySelector('.error-msg');
+      if (erroAntigo) erroAntigo.remove();
+
+      // Se inválido, mostrar mensagem
+      if (!campo.checkValidity()) {
+        campo.classList.add('invalid');
+
+        const erro = document.createElement('div');
+        erro.classList.add('error-msg');
+        erro.innerHTML = `<img src="assets/icons/circle-alert.svg" alt=""> Error message`;
+        wrapper.appendChild(erro);
+      } else {
+        campo.classList.remove('invalid');
+      }
+    };
+
+    // Em tempo real
+    const campos = form.querySelectorAll('input:required, textarea:required');
+    campos.forEach(campo => {
+      campo.addEventListener('input', () => mostrarErro(campo));
+      campo.addEventListener('change', () => mostrarErro(campo));
+    });
+
+    // No envio do formulário
     form.addEventListener('submit', (e) => {
-      const camposObrigatorios = form.querySelectorAll('input:required, textarea:required');
       let formValido = true;
 
-      camposObrigatorios.forEach((campo) => {
-        let wrapper = campo.closest('.full-width')
-          || campo.closest('.input-fields')
-          || campo.closest('.location-wrapper')
-          || campo.closest('.desc-wrapper')
-          || campo.closest('.input-pair')
-          || campo.closest('div')
-          || campo.parentElement;
-
-
-        const erroAntigo = wrapper.querySelector('.error-msg');
-        if (erroAntigo) erroAntigo.remove();
-
-        if (!campo.checkValidity()) {
-          e.preventDefault();
-          formValido = false;
-
-          campo.classList.add('invalid');
-
-          const erro = document.createElement('span');
-          erro.classList.add('error-msg');
-          erro.innerHTML = `<img src="assets/icons/circle-alert.svg" alt=""> Error message`;
-          wrapper.appendChild(erro);
-        } else {
-          campo.classList.remove('invalid');
-        }
+      campos.forEach(campo => {
+        mostrarErro(campo);
+        if (!campo.checkValidity()) formValido = false;
       });
 
       if (!formValido) {
+        e.preventDefault();
         const primeiroErro = form.querySelector('.invalid');
-        if (primeiroErro) primeiroErro.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        if (primeiroErro) {
+          primeiroErro.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
       }
     });
   </script>
+
 
 </body>
 

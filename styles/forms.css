@@ -1,29 +1,21 @@
 @import url(fields/index.css);
 
-/* ---------- MAIN CONTENT ---------- */
-.main-content {
-  width: 100%;
-  height: 100vh;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  padding: 3rem;
-}
-
 /* ---------- FORMULÁRIO EM GRID ---------- */
 form {
   all: unset;
   box-sizing: border-box;
+
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 3rem;
+  box-sizing: border-box;
 }
 
-/* Itens que devem ocupar as duas colunas */
-.full-width,
-.title-wrapper,
-.desc-wrapper,
-.about-event > h2,
-.about-event > img {
-  grid-column: span 2;
+.title-wrapper #title, #name {
+  box-sizing: border-box;
 }
 
 /* ---------- CAMPOS E INPUTS ---------- */

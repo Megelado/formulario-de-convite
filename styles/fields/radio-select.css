@@ -1,71 +1,45 @@
 .radio-select {
-  box-sizing: border-box;
-
-  & input[type="radio"] {
-    all: unset;
-    display: inline-block;
-    width: 1.75rem;
-    height: 1.75rem;
-    border: 4px solid var(--shape-button); /* fixo: não muda ao selecionar */
-    border-radius: 999px;
-    margin-right: 12px;
-    cursor: pointer;
-    transition: border 0.2s ease, box-shadow 0.2s ease;
-
-    &.light {
-      background-color: var(--brand-light);
-    }
-
-    &.navy {
-      background-color: var(--navy);
-    }
-
-    &.purple {
-      background-color: var(--purple);
-    }
-
-    &.fuschia {
-      background-color: var(--fuschia);
-    }
-
-    &.pink {
-      background-color: var(--pink);
-    }
-
-    &.danger {
-      background-color: var(--danger);
-    }
-
-    &.orange {
-      background-color: var(--orange);
-    }
-
-    &.yellow {
-      background-color: var(--yellow);
-    }
-
-    &.lime {
-      background-color: var(--lime);
-    }
-
-    &.green {
-      background-color: var(--green);
-    }
-
-    &.cyan {
-      background-color: var(--cyan);
-    }
-  }
-
-  & input[type="radio"]:hover {
-    border-color: var(--shape-hover);
-  }
-
-  & input[type="radio"]:checked {
-    box-shadow: 0 0 0 2px var(--brand-light); /* borda externa apenas */
-  }
+  width: 100%;
 }
 
-.radio-select label {
-  color: #FFFFFF;
+.radio-select .flex {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
 }
+
+.radio-select .flex label {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.radio-select input[type="radio"] {
+  all: unset;
+  width: 1.75rem;
+  height: 1.75rem;
+  border: 4px solid var(--shape-button);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.radio-select input[type="radio"]:hover {
+  border-color: var(--shape-hover);
+}
+
+.radio-select input[type="radio"]:checked {
+  box-shadow: 0 0 0 2px var(--brand-light);
+}
+
+.radio-select input.light { background-color: var(--brand-light); }
+.radio-select input.navy { background-color: var(--navy); }
+.radio-select input.purple { background-color: var(--purple); }
+.radio-select input.fuschia { background-color: var(--fuschia); }
+.radio-select input.pink { background-color: var(--pink); }
+.radio-select input.danger { background-color: var(--danger); }
+.radio-select input.orange { background-color: var(--orange); }
+.radio-select input.yellow { background-color: var(--yellow); }
+.radio-select input.lime { background-color: var(--lime); }
+.radio-select input.green { background-color: var(--green); }
+.radio-select input.cyan { background-color: var(--cyan); }

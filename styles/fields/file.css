@@ -1,3 +1,7 @@
+.titulo {
+  display: flex;
+  text-align: start;
+}
 .file-group {
   display: flex;
   align-items: center;
