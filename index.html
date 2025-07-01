@@ -216,10 +216,10 @@
               <label for="toggle-switch">Estilo</label>
               <div></div>
               <label class="switch">
-                <input type="checkbox" name="toggle-switch">
+                <input type="checkbox" id="modo-claro">
                 <span class="slider round"></span>
               </label>
-              <label for="day-or-night">Escuro</label>
+              <label id="modo-label" for="modo-claro">Escuro</label>
             </div>
 
             <div class="col-b">
@@ -240,6 +240,7 @@
 
           </div>
         </fieldset>
+
         <fieldset class="contact-details">
           <div class="flex">
             <img src="assets/icons/contact.svg" alt="">
@@ -256,8 +257,8 @@
               <label for="phone">Telefone</label>
             </div>
             <div class="input-fields">
-              <input type="email" id="email" placeholder="exemplo@email.com" required>
-              <input type="tel" id="phone" placeholder="(99) 99999-9999" required>
+              <input type="email" id="email" placeholder="exemplo@email.com">
+              <input type="tel" id="phone" placeholder="(99) 99999-9999">
             </div>
           </div>
 
@@ -265,17 +266,17 @@
         </fieldset>
         <footer>
           <div class="checkbox-flex">
-            <input type="checkbox" name="terms" id="terms" required>
+            <input type="checkbox" name="terms" id="terms">
             <label class="check" for="terms">Li e concordo com os <span class="termos">Termos e Condições</span> e com a
               <span class="politica">Política de Privacidade</span></label>
           </div>
           <div class="checkbox-flex">
-            <input type="checkbox" name="receive-mail" id="receive-mail" required>
+            <input type="checkbox" name="receive-mail" id="receive-mail">
             <label class="check" for="receive-mail">Aceito receber atualizações e
               promoções por e-mail</label>
           </div>
           <div class="checkbox-flex">
-            <input type="checkbox" name="sms" id="sms" required>
+            <input type="checkbox" name="sms" id="sms">
             <label class="check" for="sms">Aceito receber atualizações e promoções por SMS</label>
           </div>
           <div class="flex-end">
@@ -385,6 +386,15 @@
         }
       }
     });
+    const checkbox = document.getElementById('modo-claro');
+    const labelModo = document.getElementById('modo-label');
+
+    function atualizarTextoModo() {
+      labelModo.textContent = checkbox.checked ? "Claro" : "Escuro";
+    }
+
+    checkbox.addEventListener('change', atualizarTextoModo);
+    atualizarTextoModo(); // inicial
   </script>
 
 
