@@ -32,16 +32,3 @@
 #file-name {
   color: var(--input-placeholder);
 }
-
-.error-msg {
-  color: var(--danger);
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  text-align: center;
-  & img {
-    margin-right: 8px;
-    width: 1rem;
-    height: 1rem;
-  }
-}

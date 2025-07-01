@@ -46,7 +46,7 @@ aside {
 }
 
 main {
-  height: 100vh;           /* ocupa a altura da viewport */
+  height:100vh;   
   overflow: auto;
   padding: .8rem .8rem .8rem; 
   

@@ -6,12 +6,24 @@ textarea {
   color: var(--text-heading);
   width: 100%;
   font: var(--text-md);
+
+  &:invalid {
+    border: 1px solid var(--danger);
+
+    &:hover {
+      border: 1px solid var(--input-placeholder);
+    }
+
+    &:focus {
+      outline: 1px solid var(--brand-light);
+    }
+  }
+
   &:hover {
-    outline: 1px solid var(--input-placeholder);
+    border: 1px solid var(--input-placeholder);
+  }
+
+  &:focus-within {
+    border: 1px solid var(--brand-light);
   }
 }
-textarea:focus-visible {
-  border-color: var(--brand-light);
-  outline: none;
-}
-

@@ -15,6 +15,7 @@
 </head>
 
 <body>
+
   <div class="container">
     <aside class="aside-content">
       <header>
@@ -38,12 +39,12 @@
           <div class="date">
             <div class="inicio-date">
               <label for="start">Início</label>
-              <input type="date" name="start" id="start">
+              <input type="date" name="start" id="start" required>
             </div>
 
             <div class="fim-date">
               <label for="end">Fim</label>
-              <input type="date" name="end" id="end">
+              <input type="date" name="end" id="end" required>
             </div>
           </div>
 
@@ -55,7 +56,7 @@
                 <div class="tipo-wrapper">
                   <label for="type">Tipo</label>
                   <div class="radio-group">
-                    <input type="radio" name="type" id="presencial" value="Presencial" hidden>
+                    <input type="radio" name="type" id="presencial" value="Presencial" required hidden>
                     <label for="presencial" class="radio-button">
                       <div class="radio-icon" data-icon="building"></div>
                       Presencial
@@ -72,7 +73,7 @@
                 <!-- Bloco do Local -->
                 <div class="location-wrapper">
                   <label for="location">Local</label>
-                  <input type="text" name="location" id="location" placeholder="Link ou endereço">
+                  <input type="text" name="location" id="location" placeholder="Link ou endereço" required>
                 </div>
               </div>
             </div>
@@ -82,7 +83,8 @@
           </div>
           <div class="desc-wrapper full-width">
             <label for="desc">Descrição</label>
-            <textarea name="desc" cols="30" rows="10" placeholder="Escreva sobre os detalhes do evento"></textarea>
+            <textarea name="desc" cols="30" rows="10" placeholder="Escreva sobre os detalhes do evento"
+              required></textarea>
           </div>
         </fieldset>
 
@@ -254,7 +256,7 @@
           </div>
           <div class="full-width">
             <label for="name">Nome</label>
-            <input type="text" id="name" name="name" placeholder="Nome do evento">
+            <input type="text" id="name" name="name" placeholder="Nome do evento" required>
           </div>
 
           <div class="input-pair">
@@ -263,8 +265,8 @@
               <label for="phone">Telefone</label>
             </div>
             <div class="input-fields">
-              <input type="email" id="email" placeholder="exemplo@email.com">
-              <input type="tel" id="phone" placeholder="(99) 99999-9999">
+              <input type="email" id="email" placeholder="exemplo@email.com" required>
+              <input type="tel" id="phone" placeholder="(99) 99999-9999" required>
             </div>
           </div>
 
@@ -272,15 +274,17 @@
         </fieldset>
         <footer>
           <div class="checkbox-flex">
-            <input type="checkbox" name="terms" id="terms">
-            <label class="check" for="terms">Li e concordo com os <span class="termos">Termos e Condições</span> e com a <span class="politica">Política de Privacidade</span></label>
+            <input type="checkbox" name="terms" id="terms" required>
+            <label class="check" for="terms">Li e concordo com os <span class="termos">Termos e Condições</span> e com a
+              <span class="politica">Política de Privacidade</span></label>
           </div>
           <div class="checkbox-flex">
-            <input type="checkbox" name="receive-mail" id="receive-mail">
-            <label class="check" for="receive-mail">Aceito receber atualizações e promoções por e-mail</label>
+            <input type="checkbox" name="receive-mail" id="receive-mail" required>
+            <label class="check" for="receive-mail">Aceito receber atualizações e
+              promoções por e-mail</label>
           </div>
           <div class="checkbox-flex">
-            <input type="checkbox" name="sms" id="sms">
+            <input type="checkbox" name="sms" id="sms" required>
             <label class="check" for="sms">Aceito receber atualizações e promoções por SMS</label>
           </div>
           <div class="flex-end">
@@ -294,8 +298,9 @@
   <script>
     const inputArquivo = document.getElementById('arquivo');
     const nomeArquivo = document.getElementById('file-name');
+    const form = document.querySelector('form');
 
-    let erroArquivo = null; // guarda a referência da mensagem de erro
+    let erroArquivo = null;
 
     inputArquivo.addEventListener('change', () => {
       const arquivo = inputArquivo.files[0];
@@ -310,7 +315,6 @@
         const extensao = arquivo.name.split('.').pop().toLowerCase();
 
         if (permitidos.includes(extensao)) {
-          // Arquivo válido → mostra nome e remove erro (se houver)
           nomeArquivo.textContent = arquivo.name;
           nomeArquivo.style.color = corTexto;
 
@@ -318,21 +322,18 @@
             erroArquivo.remove();
             erroArquivo = null;
           }
-
         } else {
-          // Arquivo inválido → mostra mensagem de erro, mantém "Nenhum arquivo selecionado"
           nomeArquivo.textContent = 'Nenhum arquivo selecionado';
           nomeArquivo.style.color = corPlaceholder;
 
           if (!erroArquivo) {
             erroArquivo = document.createElement('span');
             erroArquivo.classList.add('error-msg');
-            erroArquivo.innerHTML = `<img src="assets/icons/circle-alert.svg" alt=""> Error message`;
+            erroArquivo.innerHTML = `<img src="assets/icons/circle-alert.svg" alt=""> Tipo de arquivo não permitido`;
             fileGroup.insertAdjacentElement('afterend', erroArquivo);
           }
         }
       } else {
-        // Nenhum arquivo → resetar tudo
         nomeArquivo.textContent = 'Nenhum arquivo selecionado';
         nomeArquivo.style.color = corPlaceholder;
 
@@ -342,9 +343,45 @@
         }
       }
     });
+
+    form.addEventListener('submit', (e) => {
+      const camposObrigatorios = form.querySelectorAll('input:required, textarea:required');
+      let formValido = true;
+
+      camposObrigatorios.forEach((campo) => {
+        let wrapper = campo.closest('.full-width')
+          || campo.closest('.input-fields')
+          || campo.closest('.location-wrapper')
+          || campo.closest('.desc-wrapper')
+          || campo.closest('.input-pair')
+          || campo.closest('div')
+          || campo.parentElement;
+
+
+        const erroAntigo = wrapper.querySelector('.error-msg');
+        if (erroAntigo) erroAntigo.remove();
+
+        if (!campo.checkValidity()) {
+          e.preventDefault();
+          formValido = false;
+
+          campo.classList.add('invalid');
+
+          const erro = document.createElement('span');
+          erro.classList.add('error-msg');
+          erro.innerHTML = `<img src="assets/icons/circle-alert.svg" alt=""> Error message`;
+          wrapper.appendChild(erro);
+        } else {
+          campo.classList.remove('invalid');
+        }
+      });
+
+      if (!formValido) {
+        const primeiroErro = form.querySelector('.invalid');
+        if (primeiroErro) primeiroErro.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    });
   </script>
-
-
 
 </body>
 

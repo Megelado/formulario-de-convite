@@ -80,10 +80,16 @@ input[type="date"] {
 }
 
 
-/* 
-.about-event input:required {
+
+.about-event input:invalid {
   outline: 1px solid var(--danger);
-} */
+  &:hover {
+    outline: 1px solid var(--input-placeholder);
+  }
+  &:focus {
+    outline: 1px solid var(--brand-light);
+  }
+}
 
 .date {
   display: grid;

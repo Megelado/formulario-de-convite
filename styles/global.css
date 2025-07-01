@@ -71,8 +71,8 @@ body {
 
   background-color: var(--shape-body);
 
-  overflow: hidden;
-  height: 100vh;
+  /* overflow: hidden; */
+  /* height: 100vh; */
 
 }
 
@@ -168,4 +168,23 @@ button {
   &:hover {
     background-color: var(--brand-mid);
   }
+}
+
+.error-msg {
+  color: var(--danger);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  & img {
+    margin-right: 8px;
+    width: 1rem;
+    height: 1rem;
+  }
+}
+
+.invalid {
+  border: 2px solid var(--danger);
+  border-radius: 4px;
+  outline: none;
 }
