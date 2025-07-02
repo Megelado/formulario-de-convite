@@ -14,9 +14,8 @@
   background-color: var(--shape-button);
   border-radius: .5rem;
   margin: .25rem .75rem .25rem 0;
-  width: 119px;
-  height: 40px;
-  /* padding: 2rem; */
+  width: 7.4375rem;
+  height: 2.5rem;
   & img {
     width: 1rem;
     height: 1rem;

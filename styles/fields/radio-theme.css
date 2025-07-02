@@ -1,8 +1,8 @@
 .radio-inner {
-  width: 134px;
-  height: 103px;
+  width: 8.375rem;
+  height: 6.4375rem;
   background-color: var(--shape-button);
-  border-radius: 8px;
+  border-radius: .5rem;
   margin: .25rem;
 
   display: flex;
@@ -43,15 +43,15 @@
   width: 100%;
   height: 100%;
   cursor: pointer;
-  padding: 4px;
+  padding: .25rem;
   box-sizing: border-box;
 }
 
 .radio-inner img {
   width: 100%;
-  max-width: 126px;
-  height: 64px;
-  border-radius: 4px;
+  max-width: 7.875rem;
+  height: 4rem;
+  border-radius: .25rem;
   object-fit: cover;
   margin-bottom: 0.25rem;
 }

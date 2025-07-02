@@ -23,8 +23,8 @@ aside {
   align-items: flex-start;
 
   & img {
-    width: 45px;
-    height: 45px;
+    width: 2.8125rem;
+    height: 2.8125rem;
   }
 
   & header {

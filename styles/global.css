@@ -171,7 +171,7 @@ fieldset {
   align-items: center;
   text-align: center;
   & img {
-    margin-right: 8px;
+    margin-right: .5rem;
     width: 1rem;
     height: 1rem;
   }
@@ -179,7 +179,7 @@ fieldset {
 
 .invalid {
   border: 2px solid var(--danger);
-  border-radius: 4px;
+  border-radius: .25rem;
   outline: none;
 }
 

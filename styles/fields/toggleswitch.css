@@ -28,17 +28,17 @@
   bottom: 0;
   background-color: var(--input-base);
   transition: 0.4s;
-  border-radius: 34px;
+  border-radius: 2.125rem;
 }
 
 /* BOLINHA */
 .slider:before {
   content: "";
   position: absolute;
-  height: 24px;
-  width: 24px;
-  left: 4px;
-  bottom: 4px;
+  height: 1.5rem;
+  width: 1.5rem;
+  left: .25rem;
+  bottom: .25rem;
   background-color: var(--input-stroke);
   transition: 0.4s;
   border-radius: 50%;
@@ -60,7 +60,7 @@
 }
 
 .switch input:checked + .slider:before {
-  transform: translateX(26px);
+  transform: translateX(1.625rem);
   background-color: var(--text-heading);
 }
 
