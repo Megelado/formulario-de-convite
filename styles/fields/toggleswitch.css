@@ -12,6 +12,12 @@
   outline: none;
 }
 
+/* Remoção do traço azul do toggle */
+.switch input[type="checkbox"] {
+  height: 0;
+  position: absolute;
+}
+
 /* TRACK */
 .slider {
   position: absolute;

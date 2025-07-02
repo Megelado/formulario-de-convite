@@ -6,23 +6,3 @@
 @import url(file.css);
 @import url(textarea.css);
 @import url(checkbox.css);
-
-
-
-
-
-
-/* Remoção do traço azul do toggle */
-.switch input[type="checkbox"] {
-  appearance: none;
-  -webkit-appearance: none;
-  background: none;
-  border: none;
-  outline: none !important;
-  box-shadow: none !important;
-  cursor: pointer;
-  margin: 0;
-  width: 0;
-  height: 0;
-  position: absolute;
-}
